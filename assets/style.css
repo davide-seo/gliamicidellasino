@@ -155,6 +155,79 @@ p{margin:0 0 1em}
 .ds-sw i{display:block;height:84px}
 .ds-sw p{margin:0;padding:.6rem .75rem}
 
+/* richiesta di prenotazione */
+.pren-pagina{display:grid;gap:2rem;padding-bottom:3rem}
+@media(min-width:1000px){.pren-pagina{grid-template-columns:minmax(0,1fr) 300px;align-items:start}.pren-lato{position:sticky;top:5.5rem}}
+.pren-pagina--una{grid-template-columns:minmax(0,52rem)!important}
+.pren-blocco{background:var(--c-surface);border:1px solid var(--c-rule);border-top:6px solid var(--c-ink);border-radius:var(--radius);padding:1.25rem 1.1rem 1.5rem;margin-bottom:1.5rem}
+@media(min-width:700px){.pren-blocco{padding:1.5rem 1.75rem 1.75rem}}
+.pren-blocco h2{font-size:1.6rem;margin-bottom:1rem}
+.pren-passo{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--c-ink2);margin:0 0 .25rem}
+.pren-gruppo{border:0;padding:0;margin:0 0 1.5rem;min-width:0}
+.pren-gruppo legend{font-family:var(--f-display);font-weight:700;font-size:1.2rem;margin-bottom:.6rem;padding:0}
+.pren-gruppo legend small{font-family:var(--f-body);font-weight:400;font-size:.85rem;color:var(--c-ink2);text-transform:none;letter-spacing:0}
+.pren-scelte{display:grid;gap:.5rem;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.pren-scelte--compatte{grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}
+.pren-scelte--3{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin:1rem 0}
+.pren-opz{text-align:left;cursor:pointer;background:var(--c-bg);border:1.5px solid var(--c-rule);border-radius:var(--radius);padding:.7rem .85rem;display:flex;flex-direction:column;gap:.2rem;color:var(--c-ink);font:inherit;font-size:.98rem;line-height:1.3}
+.pren-opz:hover{border-color:var(--c-ink)}
+.pren-opz strong{font-weight:800}
+.pren-opz span{font-size:.86rem;color:var(--c-ink2)}
+.pren-opz.attiva{background:var(--c-ink);border-color:var(--c-ink);color:#fff}
+.pren-opz.attiva span{color:rgba(255,255,255,.78)}
+.pren-vuoto{color:var(--c-ink2);margin:0}
+.pren-props{display:grid;gap:.85rem}
+.pren-prop{display:grid;grid-template-columns:1fr;border:1.5px solid var(--c-rule);border-radius:var(--radius);overflow:hidden;cursor:pointer;background:var(--c-surface);position:relative}
+@media(min-width:600px){.pren-prop{grid-template-columns:200px 1fr}}
+.pren-prop:hover{border-color:var(--c-ink)}
+.pren-prop.attiva{border-color:var(--c-action);box-shadow:0 0 0 2px var(--c-action)}
+.pren-prop input{position:absolute;opacity:0;pointer-events:none}
+.pren-prop:focus-within{outline:3px solid var(--c-focus,var(--c-action));outline-offset:2px}
+.pren-prop-img{display:block;background:var(--c-alt);aspect-ratio:16/10}
+@media(min-width:600px){.pren-prop-img{aspect-ratio:auto;min-height:100%}}
+.pren-prop-img img{width:100%;height:100%;object-fit:cover}
+.pren-prop-body{display:flex;flex-direction:column;gap:.35rem;padding:.9rem 1rem 1rem}
+.pren-prop-body strong{font-family:var(--f-display);font-size:1.3rem;line-height:1.15}
+.pren-prop-body ul{margin:.2rem 0 0;padding-left:1.1rem;font-size:.95rem}
+.pren-prop-body li{margin:.15rem 0}
+.pren-badge{align-self:flex-start;font-style:normal;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--c-action);color:var(--c-action-ink);padding:.15rem .5rem;border-radius:3px}
+.pren-prop .etichette{display:flex;flex-wrap:wrap;gap:.3rem}
+.pren-prop .etichette em{font-style:normal;font-size:.8rem;font-weight:700;background:var(--c-alt);color:var(--c-ink);border-radius:3px;padding:.1rem .45rem}
+.pren-prop-link{font-size:.9rem;align-self:flex-start}
+.pren-prop-cta{align-self:flex-start;margin-top:.35rem;font-weight:800;font-size:.95rem;border:2px solid var(--c-ink);border-radius:var(--radius);padding:.35rem .8rem}
+.pren-prop.attiva .pren-prop-cta{background:var(--c-action);color:var(--c-action-ink);border-color:var(--c-action)}
+.pren-ko{margin-top:1rem;font-size:.95rem}
+.pren-ko summary{cursor:pointer;font-weight:700;color:var(--c-ink2)}
+.pren-ko ul{padding-left:1.1rem;margin:.6rem 0 0}
+.pren-ko li{margin:.3rem 0}
+.pren-campi{display:grid;gap:.9rem 1rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-bottom:1.25rem}
+.pren-campo{display:flex;flex-direction:column;gap:.3rem;font-size:.95rem}
+.pren-campo[hidden]{display:none}
+.pren-campo--largo{grid-column:1/-1}
+.pren-campo>span{font-weight:700}
+.pren-campo b{color:var(--c-action)}
+.pren-campo small{color:var(--c-ink2);font-size:.84rem}
+.pren-campo input,.pren-campo select,.pren-campo textarea{font:inherit;font-size:1rem;padding:.65rem .7rem;border:1.5px solid var(--c-rule);border-radius:var(--radius);background:#fff;color:var(--c-ink);width:100%}
+.pren-campo input:focus,.pren-campo select:focus,.pren-campo textarea:focus{border-color:var(--c-ink);outline:2px solid var(--c-ink);outline-offset:0}
+.pren-check{flex-direction:row;align-items:flex-start;gap:.6rem;grid-column:1/-1;font-weight:400}
+.pren-check input{width:1.2rem;height:1.2rem;margin-top:.2rem;flex:none}
+.pren-check span{font-weight:400!important}
+.pren-riepilogo{background:var(--c-alt);border-radius:var(--radius);padding:1rem 1.1rem;margin:1rem 0}
+.pren-riepilogo h3{font-size:1.1rem;margin-bottom:.5rem}
+.pren-riep{margin:0;display:grid;gap:.3rem;font-size:.95rem}
+.pren-riep>div{display:grid;grid-template-columns:10rem 1fr;gap:.6rem;border-top:1px solid var(--c-rule);padding-top:.3rem}
+.pren-riep dt{font-weight:700}
+.pren-riep dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:520px){.pren-riep>div{grid-template-columns:1fr;gap:0}}
+.pren-nota{font-size:.9rem;color:var(--c-ink2)}
+.pren-avviso{background:var(--c-alt);border-left:5px solid var(--c-action);padding:.85rem 1rem;margin:0 0 1rem;border-radius:0 var(--radius) var(--radius) 0}
+.pren-avviso p{margin:.2rem 0}
+.pren-miele{position:absolute;left:-9999px;width:1px;height:1px}
+.pren-fatto{border-top-color:var(--c-action)}
+.pren-azioni-mini{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+button.btn[disabled]{opacity:.6;cursor:wait}
+.pren-lato .in-breve dl>div{grid-template-columns:1fr;gap:0}
+
 /* Gli Amici dell'Asino · direzione «Il manto dell'asino»
    I colori vengono dall'animale e dal vecchio marchio: grigio sorcino del manto,
    pangarè chiaro del muso, la croce scura sul dorso, l'arancio del logo storico. */
